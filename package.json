@@ -19,13 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryansonshine/sugarcube-rpg-macros.git"
+    "url": "git+https://github.com/myarichuk/sugarcube-rpg-macros.git"
   },
   "license": "MIT",
   "author": {
     "name": "Michael Yarichuk",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
+    "email": "myarichuk@users.noreply.github.com",
+    "url": "https://github.com/myarichuk"
   },
   "engines": {
     "node": ">=12.0"
@@ -42,9 +42,9 @@
     "codecov"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/sugarcube-rpg-macros/issues"
+    "url": "https://github.com/myarichuk/sugarcube-rpg-macros/issues"
   },
-  "homepage": "https://github.com/ryansonshine/sugarcube-rpg-macros#readme",
+  "homepage": "https://github.com/myarichuk/sugarcube-rpg-macros#readme",
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
