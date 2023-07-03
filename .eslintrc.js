@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn',
     'node/no-missing-import': 'off',
+    "@typescript-eslint/no-this-alias": "off",
     'node/no-empty-function': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-missing-require': 'off',

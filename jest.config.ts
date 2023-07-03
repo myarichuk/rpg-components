@@ -1,7 +1,10 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+// Sync object
+const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/test/**/*.spec.ts'],
+  testMatch: ['**/tests/**/*.spec.ts'],
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/types/**/*.ts',
@@ -13,3 +16,5 @@ module.exports = {
     },
   },
 };
+
+export default config;
