@@ -1,30 +1,30 @@
 import { Attribute } from './Attribute';
 import { ITimeAware } from '../ITimeAware';
 import { RechargableAttribute } from './RechargableAttribute';
-export class CharacterAttribute implements ITimeAware {
-  private attributeTree: Map<string, Attribute | CharacterAttribute> =
-    new Map();
+
+export class AttributeStore implements ITimeAware {
+  private attributeTree: Map<string, Attribute | AttributeStore> = new Map();
 
   update(timeElapsed: number): void {
-    const queue: Array<CharacterAttribute | Attribute> = Array.from(
+    const queue: Array<AttributeStore | Attribute> = Array.from(
       this.attributeTree.values()
     );
     while (queue.length > 0) {
       const node = queue.shift();
       if (node instanceof RechargableAttribute) {
         node.update(timeElapsed);
-      } else if (node instanceof CharacterAttribute) {
+      } else if (node instanceof AttributeStore) {
         queue.push(...Array.from(node.attributeTree.values()));
       }
     }
   }
 
-  getAttribute(this: CharacterAttribute, path: string): number {
+  getAttribute(this: AttributeStore, path: string): number {
     const pathParts = path.split('.');
-    let currentPart: Attribute | CharacterAttribute | undefined = this;
+    let currentPart: Attribute | AttributeStore | undefined = this;
     for (const part of pathParts) {
       currentPart =
-        currentPart instanceof CharacterAttribute
+        currentPart instanceof AttributeStore
           ? currentPart.attributeTree.get(part)
           : undefined;
       if (!currentPart) {
@@ -36,10 +36,10 @@ export class CharacterAttribute implements ITimeAware {
 
   setAttribute(path: string, value: number): void {
     const pathParts = path.split('.');
-    let currentPart: Attribute | CharacterAttribute | undefined = this;
+    let currentPart: Attribute | AttributeStore | undefined = this;
     for (let i = 0; i < pathParts.length; i++) {
       currentPart =
-        currentPart instanceof CharacterAttribute
+        currentPart instanceof AttributeStore
           ? currentPart.attributeTree.get(pathParts[i])
           : undefined;
       if (!currentPart || i === pathParts.length - 1) {
@@ -52,18 +52,18 @@ export class CharacterAttribute implements ITimeAware {
     }
   }
 
-  addAttribute(path: string, attribute: Attribute | CharacterAttribute): void {
+  addAttribute(path: string, attribute: Attribute | AttributeStore): void {
     const pathParts = path.split('.');
-    let currentPart: CharacterAttribute = this;
+    let currentPart: AttributeStore = this;
     for (let i = 0; i < pathParts.length; i++) {
       if (i === pathParts.length - 1) {
         currentPart.attributeTree.set(pathParts[i], attribute);
       } else {
         let nextPart = currentPart.attributeTree.get(pathParts[i]);
-        if (nextPart instanceof CharacterAttribute) {
+        if (nextPart instanceof AttributeStore) {
           currentPart = nextPart;
         } else {
-          nextPart = new CharacterAttribute();
+          nextPart = new AttributeStore();
           currentPart.attributeTree.set(pathParts[i], nextPart);
           currentPart = nextPart;
         }

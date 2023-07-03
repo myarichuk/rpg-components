@@ -1,17 +1,15 @@
-import { StaticAttribute, CharacterAttribute, RechargableAttribute } from '../src/index';
+import { StaticAttribute, AttributeStore, RechargableAttribute } from '../src/index';
 
-describe('CharacterAttribute class', () => {
-  let character: CharacterAttribute;
+describe('AttributeStore class', () => {
+  let character: AttributeStore;
 
-  // Arrange
   beforeEach(() => {
-    character = new CharacterAttribute();
+    character = new AttributeStore();
     character.addAttribute('attributes.strength', new StaticAttribute('strength', 10, 0, 20));
     character.addAttribute('attributes.energy', new RechargableAttribute('energy', 50, 0, 100, 0.01));
     character.addAttribute('skills.hacking.energy', new RechargableAttribute('energy', 30, 0, 100, 0.02));
   });
 
-  // Act & Assert
   it('should correctly get attribute values', () => {
     const attributeValue = character.getAttribute('attributes.strength');
     expect(attributeValue).toEqual(10);
@@ -45,8 +43,8 @@ describe('CharacterAttribute class', () => {
     expect(character.getAttribute('skills.hacking.energy')).toEqual(90); // Increase due to recharge
   });
 
-  it('should correctly handle nested CharacterAttribute instances', () => {
-    const nestedAttribute = new CharacterAttribute();
+  it('should correctly handle nested AttributeStore instances', () => {
+    const nestedAttribute = new AttributeStore();
     nestedAttribute.addAttribute('strength', new StaticAttribute('strength', 10, 0, 20));
     character.addAttribute('attributes.physical', nestedAttribute);
 
@@ -57,8 +55,8 @@ describe('CharacterAttribute class', () => {
     expect(() => character.setAttribute('attributes.physical.nonexistent', 10)).toThrowError(/Invalid attribute path/); // Test error for setting invalid nested attribute
 });
 
-it('should correctly update nested CharacterAttribute instances', () => {
-    const nestedAttribute = new CharacterAttribute();
+it('should correctly update nested AttributeStore instances', () => {
+    const nestedAttribute = new AttributeStore();
     nestedAttribute.addAttribute('energy', new RechargableAttribute('energy', 50, 0, 100, 0.01));
     character.addAttribute('attributes.stamina', nestedAttribute);
 

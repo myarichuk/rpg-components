@@ -1,4 +1,4 @@
-import { StaticAttribute } from "../src";
+import { StaticAttribute } from "../src/index";
 
 describe('StaticAttribute class', () => {
     let attribute: StaticAttribute;
