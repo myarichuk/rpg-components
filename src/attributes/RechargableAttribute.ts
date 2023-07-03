@@ -1,6 +1,7 @@
 import { Attribute } from './Attribute';
+import { ITimeAware } from '../ITimeAware';
 
-export class RechargableAttribute extends Attribute {
+export class RechargableAttribute extends Attribute implements ITimeAware {
   rechargeRate: number;
   lastUpdated: number;
 
@@ -13,16 +14,17 @@ export class RechargableAttribute extends Attribute {
   ) {
     super(name, value, min, max);
     this.rechargeRate = rechargeRate;
-    this.lastUpdated = Date.now();
+    this.lastUpdated = 0; // Using an abstract time that starts from 0
   }
 
-  getValue(): number {
-    const timeElapsed = Date.now() - this.lastUpdated;
+  update(timeElapsed: number): void {
     this.value = Math.min(
       this.max,
       this.value + this.rechargeRate * timeElapsed
     );
-    this.lastUpdated = Date.now();
+  }
+
+  getValue(): number {
     return this.value;
   }
 
@@ -33,6 +35,5 @@ export class RechargableAttribute extends Attribute {
       );
     }
     this.value = value;
-    this.lastUpdated = Date.now();
   }
 }

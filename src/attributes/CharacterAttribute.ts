@@ -1,8 +1,23 @@
 import { Attribute } from './Attribute';
-
-export class CharacterAttribute {
+import { ITimeAware } from '../ITimeAware';
+import { RechargableAttribute } from './RechargableAttribute';
+export class CharacterAttribute implements ITimeAware {
   private attributeTree: Map<string, Attribute | CharacterAttribute> =
     new Map();
+
+  update(timeElapsed: number): void {
+    const queue: Array<CharacterAttribute | Attribute> = Array.from(
+      this.attributeTree.values()
+    );
+    while (queue.length > 0) {
+      const node = queue.shift();
+      if (node instanceof RechargableAttribute) {
+        node.update(timeElapsed);
+      } else if (node instanceof CharacterAttribute) {
+        queue.push(...Array.from(node.attributeTree.values()));
+      }
+    }
+  }
 
   getAttribute(this: CharacterAttribute, path: string): number {
     const pathParts = path.split('.');
