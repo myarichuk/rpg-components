@@ -58,6 +58,7 @@
     "@ryansonshine/commitizen": "^4.2.5",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@types/jest": "^27.5.2",
+    "@types/js-yaml": "^4.0.5",
     "@types/node": "^12.20.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
@@ -69,6 +70,7 @@
     "handlebars": "^4.5.0",
     "husky": "^6.0.0",
     "jest": "^23.6.0",
+    "js-yaml": "^4.1.0",
     "lint-staged": "^13.2.1",
     "prettier": "^2.2.1",
     "rimraf": "^5.0.1",
@@ -133,5 +135,8 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
+  },
+  "dependencies": {
+    "yaml": "^2.3.1"
   }
 }
