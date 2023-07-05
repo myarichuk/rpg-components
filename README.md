@@ -1,117 +1,58 @@
-# sugarcube-rpg-macros
+Sure! Here's a template for a README file for your TypeScript GitHub library that implements RPG Components:
 
-> Template to kickstart creating a Node.js module using TypeScript and VSCode
+# RPG Components Library
 
-Inspired by [node-module-boilerplate](https://github.com/sindresorhus/node-module-boilerplate)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Features
+Welcome to the RPG Components Library! This TypeScript library provides a collection of essential components and utilities for building role-playing games (RPGs). It offers various features such as RPG character attributes, inventory management, quests, and more. This README file will guide you through the installation, usage, and contribution guidelines for the library.
 
-- [Semantic Release](https://github.com/semantic-release/semantic-release)
-- [Issue Templates](https://github.com/ryansonshine/sugarcube-rpg-macros/tree/main/.github/ISSUE_TEMPLATE)
-- [GitHub Actions](https://github.com/ryansonshine/sugarcube-rpg-macros/tree/main/.github/workflows)
-- [Codecov](https://about.codecov.io/)
-- [VSCode Launch Configurations](https://github.com/ryansonshine/sugarcube-rpg-macros/blob/main/.vscode/launch.json)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Husky](https://github.com/typicode/husky)
-- [Lint Staged](https://github.com/okonet/lint-staged)
-- [Commitizen](https://github.com/search?q=commitizen)
-- [Jest](https://jestjs.io/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
+## Table of Contents
 
-## Getting started
+- [RPG Components Library](#rpg-components-library)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Features](#features)
+  - [Examples](#examples)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-### Set up your repository
+## Installation
 
-**Click the "Use this template" button.**
-
-Alternatively, create a new directory and then run:
+To install the RPG Components Library, you can use a package manager such as npm or Yarn. Run the following command in your project's root directory:
 
 ```bash
-curl -fsSL https://github.com/ryansonshine/sugarcube-rpg-macros/archive/main.tar.gz | tar -xz --strip-components=1
+npm install rpg-components
 ```
 
-Replace `FULL_NAME`, `GITHUB_USER`, and `REPO_NAME` in the script below with your own details to personalize your new package:
+or
 
 ```bash
-FULL_NAME="John Smith"
-GITHUB_USER="johnsmith"
-REPO_NAME="my-cool-package"
-sed -i.mybak "s/\([\/\"]\)(ryansonshine)/$GITHUB_USER/g; s/sugarcube-rpg-macros\|sugarcube-rpg-macros/$REPO_NAME/g; s/Michael Yarichuk/$FULL_NAME/g" package.json package-lock.json README.md
-rm *.mybak
-```
-
-### Add NPM Token
-
-Add your npm token to your GitHub repository secrets as `NPM_TOKEN`.
-
-### Add Codecov integration
-
-Enable the Codecov GitHub App [here](https://github.com/apps/codecov).
-
-**Remove everything from here and above**
-
----
-
-# sugarcube-rpg-macros
-
-[![npm package][npm-img]][npm-url]
-[![Build Status][build-img]][build-url]
-[![Downloads][downloads-img]][downloads-url]
-[![Issues][issues-img]][issues-url]
-[![Code Coverage][codecov-img]][codecov-url]
-[![Commitizen Friendly][commitizen-img]][commitizen-url]
-[![Semantic Release][semantic-release-img]][semantic-release-url]
-
-> My awesome module
-
-## Install
-
-```bash
-npm install sugarcube-rpg-macros
+yarn add rpg-components
 ```
 
 ## Usage
 
-```ts
-import { myPackage } from 'sugarcube-rpg-macros';
+TODO: fill this in once there is enough to write about
 
-myPackage('hello');
-//=> 'hello from my package'
-```
+## Features
 
-## API
+The RPG Components Library provides the following features:
 
-### myPackage(input, options?)
+TODO: fill this in once there is enough to write about
 
-#### input
+## Examples
 
-Type: `string`
+To help you get started, the library includes a set of example applications that demonstrate how to use the RPG Components in different scenarios. You can find these examples in the [`examples/`](examples/) directory.
 
-Lorem ipsum.
+To run an example, follow the instructions provided in each example's README file.
 
-#### options
+TODO: fill the directory with examples once there is enough to write about
 
-Type: `object`
+## Contributing
 
-##### postfix
+Contributions are welcome! If you have any bug reports, feature requests, or improvements, please open an issue or submit a pull request on the GitHub repository.
 
-Type: `string`
-Default: `rainbows`
+## License
 
-Lorem ipsum.
-
-[build-img]:https://github.com/ryansonshine/sugarcube-rpg-macros/actions/workflows/release.yml/badge.svg
-[build-url]:https://github.com/ryansonshine/sugarcube-rpg-macros/actions/workflows/release.yml
-[downloads-img]:https://img.shields.io/npm/dt/sugarcube-rpg-macros
-[downloads-url]:https://www.npmtrends.com/sugarcube-rpg-macros
-[npm-img]:https://img.shields.io/npm/v/sugarcube-rpg-macros
-[npm-url]:https://www.npmjs.com/package/sugarcube-rpg-macros
-[issues-img]:https://img.shields.io/github/issues/ryansonshine/sugarcube-rpg-macros
-[issues-url]:https://github.com/ryansonshine/sugarcube-rpg-macros/issues
-[codecov-img]:https://codecov.io/gh/ryansonshine/sugarcube-rpg-macros/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh/ryansonshine/sugarcube-rpg-macros
-[semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
-[semantic-release-url]:https://github.com/semantic-release/semantic-release
-[commitizen-img]:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
-[commitizen-url]:http://commitizen.github.io/cz-cli/
+This library is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the library in accordance with the terms of the license.

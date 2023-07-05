@@ -1,7 +1,7 @@
 {
-  "name": "sugarcube-rpg-macros",
+  "name": "rpg-components",
   "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
+  "description": "Simple classes to use as build blocks for an RPG game",
   "main": "./lib/index.js",
   "module": "ES6",
   "files": [
@@ -15,8 +15,7 @@
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
-    "test": "jest --coverage",
-    "typecheck": "tsc --noEmit"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -137,6 +136,6 @@
     ]
   },
   "dependencies": {
-    "yaml": "^2.3.1"
+    "super-ecs": "^2.3.0"
   }
 }
